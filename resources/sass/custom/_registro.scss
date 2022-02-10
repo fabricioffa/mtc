@@ -1,0 +1,100 @@
+.register {
+    img[alt="MTC logo"] {
+        top: 1.5%;
+        left: 5%;
+    }
+
+    nav {
+        top: 1.5%;
+        right: 5%;
+
+        @include media-breakpoint-up(lg) {
+            top: 5%;
+        }
+    }
+
+    .progress {
+        height: 1px;
+    }
+
+    .progress-bar {
+        height: 3px;
+    }
+
+    fieldset {
+        display: none;
+
+        &[aria-current="step"] {
+            display: block;
+        }
+    }
+}
+
+.google-logo::before {
+    content: url("/assets/imgs/logos/google.svg");
+    margin-right: 4px;
+    vertical-align: -0.3em;
+}
+
+.between-lines {
+    &::after, &::before {
+        content: '';
+
+        position: absolute;
+        top: 46%;
+
+        display: block;
+        width: 161px;
+
+        border: 1px solid #EFEFEF;
+    }
+
+    &::after {
+        right: calc(50% + 20px);
+    }
+
+    &::before {
+        left: calc(50% + 20px);
+    }
+}
+
+.form-switch .form-check-input.custom-register-switch {
+    width: 72px;
+    height: 32px;
+    background-color: #EFEFEF;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.form-switch .form-check-input.custom-register-switch:checked {
+    background-color: $secondary;
+}
+
+.custom-checkbox {
+    background: #EFEFEF;
+    width: 22px;
+    height: 22px;
+    appearance: none;
+
+    &:checked {
+        appearance: auto;
+    }
+}
+
+.custom-select-caret {
+    appearance: none;
+
+    background: url("/assets/imgs/vectors/register-select-caret.svg") 98% center no-repeat;
+}
+
+.max-form-width {
+    max-width: min(100%, 370px);
+}
+
+// #step-2-label {
+//     display: none;
+// }
+
+
+
+
+

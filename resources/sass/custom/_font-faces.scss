@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "Archivo";
+    src: local("Archivo Regular"), local("Archivo-Regular"),
+        url("/assets/fonts/Archivo/Archivo-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Archivo";
+    src: local("Archivo Medium"), local("Archivo-Medium"),
+        url("/assets/fonts/Archivo/Archivo-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto Regular"), local("Roboto-Regular"),
+        url("/assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: local("SpaceGrotesk Light"), local("SpaceGrotesk-Light"),
+        url("/assets/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf")
+            format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: local("SpaceGrotesk Regular"), local("SpaceGrotesk-Regular"),
+        url("/assets/fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf")
+            format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: local("SpaceGrotesk Medium"), local("SpaceGrotesk-Medium"),
+        url("/assets/fonts/SpaceGrotesk/SpaceGrotesk-Medium.ttf")
+            format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: local("SpaceGrotesk Bold"), local("SpaceGrotesk-Bold"),
+        url("/assets/fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf")
+            format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}

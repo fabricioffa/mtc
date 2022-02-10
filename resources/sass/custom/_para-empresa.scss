@@ -1,0 +1,11 @@
+.checked-marker > *::before {
+    content: url("/assets/imgs/icons/blue-check-mark.svg");
+    position: absolute;
+    top: 2px;
+    left: -40px;
+}
+
+// .text-ballon::after {
+//     content: url();
+//     position: absolute;
+// }

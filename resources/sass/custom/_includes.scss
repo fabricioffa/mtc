@@ -1,0 +1,59 @@
+.dropdown-toggle::after {
+    border: none;
+    vertical-align: 0.095em;
+
+    @at-root .bg-primary & {
+        content: url("/assets/imgs/vectors/light-down-caret.svg");
+    }
+
+    @at-root .bg-white & {
+        content: url("/assets/imgs/vectors/dark-down-caret.svg");
+    }
+}
+
+.marked::before {
+    content: url("/assets/imgs/vectors/elipse-secondary.svg");
+    position: absolute;
+    left: -10px;
+    top: 41%;
+
+    @include media-breakpoint-up(lg) {
+        left: -3px;
+    }
+}
+
+aside.bg-primary .dropdown-item:hover {
+    color: $primary !important;
+}
+
+.navbar-dark .navbar-toggler-icon.custom-color {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-light .navbar-toggler-icon.custom-color {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2820, 20, 21, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+footer {
+    img {
+        margin-left: -16px;
+        @include media-breakpoint-up(lg) {
+            margin-left: -8px;
+        }
+    }
+
+    div.position-absolute {
+        bottom: 387px;
+
+        @include media-breakpoint-up(sm) {
+            bottom: 220px;
+        }
+
+        p {
+            @include media-breakpoint-up(lg) {
+                font-family: "Archivo", sans-serif;
+                font-weight: normal !important;
+            }
+        }
+    }
+}
