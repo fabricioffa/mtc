@@ -17,7 +17,7 @@
             <ul class="d-flex flex-column flex-sm-row gap-4 align-self-sm-end list-unstyled fs-17 mb-0">
                 <li>Contacto</li>
                 <li class="ps-lg-2"><a href="{{ route('registo')}} "></a></li>
-                <li class="ps-lg-2"><a href="{{ route('preco')}} ">Preço</a></li>
+                <li class="ps-lg-2"><a href="{{ route('precos')}} ">Preço</a></li>
                 <li class="ps-lg-2"><a href="https://sms.mytelecom.pt/">Espaço cliente</a></li>
             </ul>
         </div>
