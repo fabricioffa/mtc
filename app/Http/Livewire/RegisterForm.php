@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\RegistoMail;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class RegisterForm extends Component
@@ -44,8 +46,9 @@ class RegisterForm extends Component
 
         session()->flash('successMessage', "Cadastro realizado com sucesso.\n Logo entraremos em contato.");
 
-        $this->resetForm();
+        Mail::to($this->email)->send(new RegistoMail($this->email));
 
+        $this->resetForm();
     }
 
     private function resetForm()
