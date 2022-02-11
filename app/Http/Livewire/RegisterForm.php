@@ -73,7 +73,6 @@ class RegisterForm extends Component
 
     public function nextStep(Request $request)
     {
-        dd($request->all ());
         $this->validate();
 
         $this->firstStep = false;
