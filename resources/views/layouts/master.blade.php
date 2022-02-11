@@ -19,7 +19,7 @@
         @yield('content')
     </main>
 
-    @if (Request::path() != 'registro')
+    @if (Request::path() != 'registo')
         @include('includes.footer')
     @endif
 
