@@ -83,8 +83,6 @@
             <div class="alert alert-danger mt-1 py-2">{{ $message }}</div>
         @enderror
 
-
-
         <p class="fs-14 fw-500 text-96 mt-2" id="pass-descriptor">A sua senha deverá conter entre 6 a 8
             caracteres</p>
 
@@ -92,9 +90,9 @@
             <button wire:click="nextStep"
                 class="d-block bg-secondary rounded-4 border-0 font-archivo fs-15 text-white mx-auto py-2 px-5"
                 type="button">Continuar</button>
-            <p class="my-4 between-lines position-relative">Ou</p>
+            {{-- <p class="my-4 between-lines position-relative">Ou</p>
             <a class="bg-white google-logo position-relative border border-color-ef fs-15 fw-500 test-2b2d42 text-decoration-none text-nowrap py-2 px-5"
-                href="" role="button">Criar conta com o google</a>
+                href="" role="button">Criar conta com o google</a> --}}
         </section>
     </fieldset>
 
