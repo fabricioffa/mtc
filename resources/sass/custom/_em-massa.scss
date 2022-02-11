@@ -1,0 +1,14 @@
+.mobile-show {
+    @include media-breakpoint-down(lg) {
+        display: block !important;
+        opacity: 1 !important;
+    }
+}
+
+.top-10per {
+    top: 10%;
+}
+
+.card-min-h {
+    min-height: 351px;
+}
