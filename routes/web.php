@@ -43,9 +43,9 @@ Route::get('precos', function () {
     return view('precos');
 })->name('precos');
 
-Route::get('registro', function () {
-    return view('registro');
-})->name('registro');
+Route::get('registo', function () {
+    return view('registo');
+})->name('registo');
 
 
 

@@ -35,7 +35,7 @@
                         <a class="nav-link position-relative text-light-navbar font-archivo {{ request()->route()->named('precos') ? 'marked' : null }}" href="{{ route('precos') }}">Preços</a>
                     </li>
                     <a class="bg-secondary btn-padding text-white  text-decoration-none rounded-4"
-                        href="{{ route('registro') }}" role="button">Registro</a>
+                        href="{{ route('registo') }}" role="button">Registo</a>
                 </ul>
             </div>
         </div>

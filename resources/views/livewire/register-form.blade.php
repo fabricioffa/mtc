@@ -10,12 +10,6 @@
         @if (session()->has('message'))
             <div class="alert alert-success">
                 {{ session('message') }}
-                {{-- <svg viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.
-                        293-4.293a1 1 0 111.414 0L10 8.586l4.
-                        "/>
-                </svg> --}}
             </div>
         @endif
 

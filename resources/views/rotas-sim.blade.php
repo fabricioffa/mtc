@@ -26,7 +26,7 @@
                     <div class="d-flex flex-column align-items-start ps-4 pe-3 h-100">
                         <p class="text-secondary fs-18-32 fw-500 pt-sm-4 mt-2">0.019€ / por Sms</p>
                         <a class="d-block bg-secondary rounded-4 fs-19 text-decoration-none fw-500 text-white mt-2 mt-sm-auto"
-                            href="{{ route('registro') }} " role="button">Registo grátis</a>
+                            href="{{ route('registo') }} " role="button">Registo grátis</a>
                     </div>
                     <img class="balloon-tail position-absolute" src="{{ asset('assets/imgs/vectors/balloon-tail.svg') }}" alt="">
                 </div>

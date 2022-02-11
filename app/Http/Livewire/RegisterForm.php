@@ -26,21 +26,21 @@ class RegisterForm extends Component
         'username' => 'required|alpha_dash|min:6|max:20',
         'email' => 'required|email',
         'password' => 'required|min:6|max:8|confirmed',
-        'country' => 'required|alpha',
+        'country' => 'required|alpha', // valida antes do tempo
         'currency' => 'required|alpha',
         'phone' => 'nullable',
         'credit_limit' => 'nullable|numeric',
     ];
 
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
+    // public function updated($propertyName)
+    // {
+    //     $this->validateOnly($propertyName); // check
+    // }
 
 
     public function submit()
     {
-        // $this->validate();
+        $this->validate();
 
         // User::create([
         //     'name' => $this->name,

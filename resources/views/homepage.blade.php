@@ -19,7 +19,7 @@
                         Marketing é de longe e sem duvida o mais eficiente canal de que dispõe para veicular a sua
                         comunicação. </p>
                     <a class="bg-secondary btn-padding text-white fw-500 text-decoration-none rounded-4 fs-18"
-                        href="{{ route('registro') }}" role="button">Registro</a>
+                        href="{{ route('registo') }}" role="button">Registo</a>
                 </div>
                 <div class="col-12 col-xl-6 ps-lg-2 pt-lg-4 ps-xl-5 align-self-xl-center pt-5 pt-xl-0 mt-5 mt-xl-0">
                     <img class="d-block img-fluid mx-auto mx-xl-0" src="{{ asset('assets/imgs/banners/home.svg') }}" alt=""
@@ -453,7 +453,7 @@
                             Com a nossa ferramenta pode gerir os seus grupos de envio, criando uma segmentação de
                             clientes.</p>
                         <a class="d-inline-block btn-padding bg-secondary rounded-4 text-decoration-none text-white fw-500 fs-18 mx-auto mt-4"
-                            href="{{ route('registro') }}" role="button">Registro</a>
+                            href="{{ route('registo') }}" role="button">Registo</a>
                     </header>
                     <div class="col-11 col-sm-10 col-lg-8 mx-auto mt-4 pt-3 pt-lg-0 mt-lg-5">
                         <img class="rounded-12 panel-filter img-fluid"
