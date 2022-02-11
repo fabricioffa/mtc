@@ -1,17 +1,20 @@
 <form class="fs-14 fw-500" wire:submit.prevent="submit" method="POST">
     @csrf
+
+    @if (session()->has('successMessage'))
+    <div class="alert alert-success text-center d-flex flex-column-reverse {{$hidden}}">
+        <p>{{ session('successMessage') }}</p>
+        <div class="position-relative flash-close-btn align-self-end"
+            role="button" aria-label="fechar" wire:click="$set('hidden', 'd-none')"></div>
+    </div>
+    @endif
+
     <div>
         <h3 class="text-center fs-14 fw-500 text-2b2d42 labels-container">
 
             <span class="{{ $firstStep ? null : 'd-none' }}" id="step-1-label">1 de 2</span>
             <span class="{{ $firstStep ? 'd-none' : null }}" id="step-2-label">2 de 2</span>
         </h3>
-
-        @if (session()->has('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
 
         <div class="progress bg-2b2d42 align-items-center overflow-visible">
             <div class="progress-bar bg-secondary" role="progressbar" aria-valuemin="50" aria-valuemax="100"
@@ -31,7 +34,7 @@
         </section>
 
         @error('name')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="alert alert-danger mt-1 py-2">{{ $message }}</div>
         @enderror
 
         <section class="d-flex flex-column mt-3">
@@ -43,7 +46,7 @@
         </section>
 
         @error('username')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="alert alert-danger mt-1 py-2">{{ $message }}</div>
         @enderror
 
         <section class="d-flex flex-column mt-3">
@@ -55,7 +58,7 @@
         </section>
 
         @error('email')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="alert alert-danger mt-1 py-2">{{ $message }}</div>
         @enderror
 
         <section class="d-flex flex-column flex-lg-row justify-content-between gap-lg-5 mt-3">
@@ -77,7 +80,7 @@
         </section>
 
         @error('password')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="alert alert-danger mt-1 py-2">{{ $message }}</div>
         @enderror
 
 
@@ -103,9 +106,9 @@
             <label for="register-country">País<sup class="text-danger">*</sup></label>
             <select class="bg-efefef border-0 rounded-03 py-2 ps-2 pe-3 custom-select-caret mt-1" name="country"
                 id="register-country" required>
-                <option value="option1">Opção 1</option>
-                <option value="option2">Opção 2</option>
-                <option value="option3">Opção 3</option>
+                <option value="portugal">Portugal</option>
+                <option value="france">França</option>
+                <option value="italy">Itália</option>
             </select>
         </section>
 
@@ -114,8 +117,8 @@
             <select class="bg-efefef border-0 rounded-03 py-2 ps-2 pe-3 custom-select-caret mt-1" name="currency"
                 id="register-currency" required>
                 <option value="eur">EUR</option>
-                <option value="option2">Opção 2</option>
-                <option value="option3">Opção 3</option>
+                <option value="brl">BRL</option>
+                <option value="dol">DOL</option>
             </select>
         </section>
 
@@ -124,8 +127,12 @@
             <input
                 class="form-control bg-efefef border-0 rounded-03 py-2 ps-3 mt-1 @error('phone') is-invalid @enderror"
                 type="tel" inputmode="tel" wire:model="phone" name="phone" id="register-phone" autocomplete="tel"
-                minlength="6" maxlength="15">
+                minlength="6" maxlength="30">
         </section>
+
+        @error('phone')
+            <div class="alert alert-danger mt-1 py-2">{{ $message }}</div>
+        @enderror
 
         <section class="d-flex flex-column mt-3">
             <label class="fs-16" for="register-credit">Limite de crédito</label>
@@ -135,6 +142,10 @@
                 autocomplete="tel" min="0" max="1000000">
         </section>
 
+        @error('credit_limit')
+            <div class="alert alert-danger mt-1 py-2">{{ $message }}</div>
+        @enderror
+
         <section class="form-check form-switch d-flex align-items-center mt-3 ps-0">
             <input class="form-check-input custom-register-switch border-0 order-2 mt-0" type="checkbox" name="state"
                 id="register-state">
@@ -142,9 +153,16 @@
         </section>
 
         <section class="d-flex align-items-center mt-3 pb-2">
-            <input class="me-2 custom-checkbox" type="checkbox" name="terms" id="register-terms">
+            <input class="me-2 custom-checkbox" wire:click="$set('acceptedTerms', true)" type="checkbox" name="terms"
+                id="register-terms">
             <label for="register-terms">Li e concordo com os termos de Termos de Serviço</label>
         </section>
+
+        @if (session()->has('termsMessage'))
+            <div class="alert alert-danger mt-1 py-2">
+                {{ session('termsMessage') }}
+            </div>
+        @endif
 
         <button class="d-block bg-secondary rounded-4 border-0 font-archivo fs-15 text-white mx-auto py-2 px-5 mt-5"
             type="submit">Criar conta</button>

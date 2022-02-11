@@ -2,61 +2,49 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\User;
-use Illuminate\Http\Request;
 use Livewire\Component;
 
 class RegisterForm extends Component
 {
     public $firstStep = true;
-    public $successMsg = '';
+    public $acceptedTerms = false;
+    public $hidden = null;
 
     public $name;
     public $username;
     public $email;
     public $password;
     public $password_confirmation;
-    public $country;
-    public $currency;
     public $phone;
     public $credit_limit;
 
     protected $rules = [
-        'name' => 'sometimes|nullable|alpha|min:6|max:50',
+        'name' => 'sometimes|nullable|alpha|min:2|max:50',
         'username' => 'required|alpha_dash|min:6|max:20',
         'email' => 'required|email',
         'password' => 'required|min:6|max:8|confirmed',
-        'country' => 'required|alpha', // valida antes do tempo
-        'currency' => 'required|alpha',
-        'phone' => 'nullable',
+        'phone' => 'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|min:6|max:30',
         'credit_limit' => 'nullable|numeric',
     ];
 
-    // public function updated($propertyName)
-    // {
-    //     $this->validateOnly($propertyName); // check
-    // }
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
 
 
     public function submit()
     {
+        if (!$this->acceptedTerms) {
+            session()->flash('termsMessage', 'É necessário aceitar os Termos de Serviço para terminar o registo.');
+            return;
+        }
+
         $this->validate();
 
-        // User::create([
-        //     'name' => $this->name,
-        //     'username' => $this->username,
-        //     'email' => $this->email,
-        //     'password' => $this->password,
-        //     'country' => $this->country,
-        //     'currency' => $this->currency,
-        //     'phone' => $this->phone,
-        //     'credit_limit' => $this->creditLimit,
-        // ]);
-
-        session()->flash('message', 'Cadastro realizado com sucesso. Logo entraremos em contato.');
+        session()->flash('successMessage', "Cadastro realizado com sucesso.\n Logo entraremos em contato.");
 
         $this->resetForm();
-
 
     }
 
@@ -68,12 +56,17 @@ class RegisterForm extends Component
         $this->password = '';
         $this->password_confirmation = '';
         $this->phone = '';
-        $this->creditLimit = '';
+        $this->credit_limit = '';
     }
 
-    public function nextStep(Request $request)
+    public function nextStep()
     {
-        $this->validate();
+        $this->validate([
+            'name' => 'sometimes|nullable|alpha|min:6|max:50',
+            'username' => 'required|alpha_dash|min:6|max:20',
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:8|confirmed',
+        ]);
 
         $this->firstStep = false;
     }
