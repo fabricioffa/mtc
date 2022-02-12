@@ -8,7 +8,11 @@
                     intuitivo. Registe-se e aceda já à plataforma WAUSMS. Experimente de forma completamente grátis e
                     conheça a ferramenta de envio de SMS mais completa do mercado. Funcionalidades Premium a preços low
                     cost.</p>
+<<<<<<< HEAD
                 <a class="d-inline-block bg-white text-secondary text-decoration-none rounded-4 fw-500 font-archivo fs-18 mx-auto py-2 px-3 mt-3 mb-2 mb-lg-5" href="{{ route('registro') }}"
+=======
+                <a class="d-inline-block bg-white text-secondary text-decoration-none rounded-4 fw-500 font-archivo fs-18 mx-auto py-2 px-3 mt-3 mb-2 mb-lg-5" href="{{ route('registo') }}"
+>>>>>>> 4f1ed8a7c8bcb9e288a80eedba59bd188e605eaf
                     role="button">Registo gratuito</a>
             </div>
         </div>
@@ -16,14 +20,24 @@
             <img class="align-self-start pb-lg-2" src="{{ asset('assets/imgs/logos/footer.svg') }}" alt="MTC logo - Home">
             <ul class="d-flex flex-column flex-sm-row gap-4 align-self-sm-end list-unstyled fs-17 mb-0">
                 <li>Contacto</li>
+<<<<<<< HEAD
                 <li class="ps-lg-2">Registo</li>
                 <li class="ps-lg-2">Preço</li>
                 <li class="ps-lg-2">Espaço cliente</li>
+=======
+                <li class="ps-lg-2"><a class="text-white text-decoration-none" href="{{ route('registo')}}">Registo</a></li>
+                <li class="ps-lg-2"><a class="text-white text-decoration-none" href="{{ route('precos')}} ">Preço</a></li>
+                <li class="ps-lg-2"><a class="text-white text-decoration-none" href="https://sms.mytelecom.pt/">Espaço cliente</a></li>
+>>>>>>> 4f1ed8a7c8bcb9e288a80eedba59bd188e605eaf
             </ul>
         </div>
         <div class="row flex-column flex-sm-row gap-3 gap-lg-0 mt-3 ms-1 ms-sm-0">
             <p class="col mb-0 ms-lg-2 px-0">© 2020 My Telecom</p>
+<<<<<<< HEAD
             <p class="col mb-0 text-sm-end pe-2 pe-lg-0 px-0">Made by webhouse</p>
+=======
+            <p class="col mb-0 text-sm-end pe-2 pe-lg-0 px-0"><a class="text-white text-decoration-none" href="https://webhouse.pt/">Made by webhouse</a></p>
+>>>>>>> 4f1ed8a7c8bcb9e288a80eedba59bd188e605eaf
         </div>
     </div>
 </footer>

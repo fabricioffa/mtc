@@ -11453,6 +11453,35 @@ footer div.position-absolute {
   display: block;
 }
 
+<<<<<<< HEAD
+=======
+.flash-close-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+}
+.flash-close-btn:hover {
+  transform: scale(0.9);
+}
+.flash-close-btn::after, .flash-close-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 9px;
+  display: inline-block;
+  background-color: #198754;
+  width: 20px;
+  height: 2px;
+  border-radius: 50rem;
+}
+.flash-close-btn::before {
+  transform: rotate(-45deg);
+}
+.flash-close-btn::after {
+  transform: rotate(45deg);
+}
+
+>>>>>>> 4f1ed8a7c8bcb9e288a80eedba59bd188e605eaf
 .google-logo::before {
   content: url("/assets/imgs/logos/google.svg");
   margin-right: 4px;

@@ -14,7 +14,11 @@
                     <p class="fs-18-22 pb-5 mb-0 mb-lg-3">HTTP REST, HTTP GET, SMP</p>
 
                     <a class="d-lg-none bg-secondary btn-padding text-white fw-500 text-decoration-none rounded-4 fs-18"
+<<<<<<< HEAD
                         href="{{ route('registro') }}" role="button">Registro</a>
+=======
+                        href="{{ route('registo') }}" role="button">Registo</a>
+>>>>>>> 4f1ed8a7c8bcb9e288a80eedba59bd188e605eaf
                 </div>
                 <div class="col-lg-5 align-self-lg-center pt-3 pt-lg-4 pt-xl-0 mt-5 mt-xl-0">
                     <img class="d-block img-fluid mx-auto me-xl-0 ms-lg-auto pe-2 pe-sm-0"

@@ -7,28 +7,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Envie SMS’s em Massa ao melhor preço do mercado.">
     <title>{{ config('app.name') }} &mdash; @yield('title')</title>
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicons/favicon.ico') }}" type="image/x-icon" />
-    <link rel="stylesheet" href="{{ mix('assets/css/app.css') }}">
     @stack('stylesheet')
 
 </head>
 
 <body>
-    @yield('banner')
-    <main>
         @yield('content')
-    </main>
 
-<<<<<<< HEAD
-    @if (Request::path() != 'registro')
-=======
-    @if (Request::path() != 'registo')
->>>>>>> 4f1ed8a7c8bcb9e288a80eedba59bd188e605eaf
-        @include('includes.footer')
-    @endif
-
-
-    <script src="{{ mix('assets/js/app.js') }}"></script>
     @stack('javascript')
 </body>
 
