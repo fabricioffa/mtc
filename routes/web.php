@@ -47,9 +47,3 @@ Route::get('precos', function () {
 Route::get('registo', function () {
     return view('registo');
 })->name('registo');
-
-
-
-
-
-

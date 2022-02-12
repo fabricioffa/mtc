@@ -19,11 +19,7 @@
                         Marketing é de longe e sem duvida o mais eficiente canal de que dispõe para veicular a sua
                         comunicação. </p>
                     <a class="bg-secondary btn-padding text-white fw-500 text-decoration-none rounded-4 fs-18"
-<<<<<<< HEAD
-                        href="{{ route('registro') }}" role="button">Registro</a>
-=======
                         href="{{ route('registo') }}" role="button">Registo</a>
->>>>>>> 4f1ed8a7c8bcb9e288a80eedba59bd188e605eaf
                 </div>
                 <div class="col-12 col-xl-6 ps-lg-2 pt-lg-4 ps-xl-5 align-self-xl-center pt-5 pt-xl-0 mt-5 mt-xl-0">
                     <img class="d-block img-fluid mx-auto mx-xl-0" src="{{ asset('assets/imgs/banners/home.svg') }}" alt=""

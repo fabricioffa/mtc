@@ -11453,8 +11453,6 @@ footer div.position-absolute {
   display: block;
 }
 
-<<<<<<< HEAD
-=======
 .flash-close-btn {
   width: 22px;
   height: 22px;
@@ -11481,7 +11479,6 @@ footer div.position-absolute {
   transform: rotate(45deg);
 }
 
->>>>>>> 4f1ed8a7c8bcb9e288a80eedba59bd188e605eaf
 .google-logo::before {
   content: url("/assets/imgs/logos/google.svg");
   margin-right: 4px;
