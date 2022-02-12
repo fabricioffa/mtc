@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Mail\RegistoMail;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
@@ -29,14 +30,49 @@ class RegisterForm extends Component
         'credit_limit' => 'nullable|numeric',
     ];
 
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
+    protected $validationAttributes;
+
+    public function boot() {
+        $this->validationAttributes = $this->getAttributesNames();
     }
 
-
-    public function submit()
+    private function getAttributesNames(): array
     {
+        switch (App::getLocale()) {
+            case 'pt':
+                return [
+                    'name' => 'nome',
+                    'username' => 'usuário',
+                    'email' => 'email',
+                    'password' => 'password',
+                    'phone' => 'telefone',
+                    'credit_limit' => 'limite de crédito',
+                ];
+
+            case 'es':
+                return [
+                    'name' => 'Nombre',
+                    'username' => 'Usuario',
+                    'email' => 'Email',
+                    'password' => 'Password',
+                    'phone' => 'Teléfono',
+                    'credit_limit' => 'Límite de crédito',
+                ];
+
+            default:
+                return [
+                    'username' => 'user name',
+                    'phone' => 'phone number',
+                    'credit_limit' => 'credit limit',
+                ];
+        }
+    }
+
+    public function updated($propertyName) {
+$this->validateOnly($propertyName);
+    }
+
+    public function submit() {
         if (!$this->acceptedTerms) {
             session()->flash('termsMessage', 'É necessário aceitar os Termos de Serviço para terminar o registo.');
             return;
@@ -51,8 +87,7 @@ class RegisterForm extends Component
         $this->resetForm();
     }
 
-    private function resetForm()
-    {
+    private function resetForm() {
         $this->name = '';
         $this->username = '';
         $this->email = '';
@@ -62,8 +97,7 @@ class RegisterForm extends Component
         $this->credit_limit = '';
     }
 
-    public function nextStep()
-    {
+    public function nextStep() {
         $this->validate([
             'name' => 'sometimes|nullable|alpha|min:6|max:50',
             'username' => 'required|alpha_dash|min:6|max:20',
@@ -74,8 +108,7 @@ class RegisterForm extends Component
         $this->firstStep = false;
     }
 
-    public function render()
-    {
+    public function render() {
         return view('livewire.register-form');
     }
 }

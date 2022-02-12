@@ -29,10 +29,10 @@ class LanguageMiddleware
         return $formattedLocales;
     }
 
-    private function getAvaiableLocale (array $langs): string
+    private function getAvaiableLocale (array $locales): string
     {
-        foreach ($langs as $lang) {
-            if (in_array($lang, $this->availableLocales, true)) return $lang;
+        foreach ($locales as $locale) {
+            if (in_array($locale, $this->availableLocales, true)) return $locale;
         }
 
         return config('app.fallback_locale');
