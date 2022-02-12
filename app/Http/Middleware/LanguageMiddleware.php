@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\App;
 
 class LanguageMiddleware
 {
-    public $locale;
+    public $availableLocales = ['pt', 'en', 'es'];
+
     /**
      * Handle an incoming request.
      *
@@ -17,15 +18,34 @@ class LanguageMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
 
-    public function __construct()
+    private function formatLocales(array $locales): array
     {
-        $this->locale = App::currentLocale();
+        $formattedLocales= [];
+
+        foreach ($locales as $locale) {
+            $formattedLocales[] = substr_replace($locale, '', 2);
+        }
+
+        return $formattedLocales;
+    }
+
+    private function getAvaiableLocale (array $langs): string
+    {
+        foreach ($langs as $lang) {
+            if (in_array($lang, $this->availableLocales, true)) return $lang;
+        }
+
+        return config('app.fallback_locale');
     }
 
     public function handle(Request $request, Closure $next)
     {
-        if (in_array($this->locale, ['en', 'es', 'pt'])) {
-            App::setLocale($this->locale);
-        }
+        $userLocales = $this->formatLocales($request->getLanguages());
+
+        if ($userLocales[0] === App::currentLocale()) return $next($request);
+
+        App::setLocale($this->getAvaiableLocale($userLocales));
+
+        return  $next($request);
     }
 }
