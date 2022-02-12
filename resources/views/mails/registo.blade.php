@@ -1,7 +1,11 @@
 @extends('layouts.mail')
 
 @section('title', 'Confirmação de registo')
-
+    <style>
+        .container {
+            background: red;
+        }
+    </style>
 @push('stylesheet')
 
 @endpush

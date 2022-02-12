@@ -47,3 +47,7 @@ Route::get('precos', function () {
 Route::get('registo', function () {
     return view('registo');
 })->name('registo');
+
+Route::get('registo/mail', function () {
+    return view('mails.registo');
+});

@@ -68,25 +68,6 @@ class RegisterForm extends Component
         }
     }
 
-    public function updated($propertyName) {
-$this->validateOnly($propertyName);
-    }
-
-    public function submit() {
-        if (!$this->acceptedTerms) {
-            session()->flash('termsMessage', 'É necessário aceitar os Termos de Serviço para terminar o registo.');
-            return;
-        }
-
-        $this->validate();
-
-        session()->flash('successMessage', "Cadastro realizado com sucesso.\n Logo entraremos em contato.");
-
-        Mail::to($this->email)->send(new RegistoMail($this->email));
-
-        $this->resetForm();
-    }
-
     private function resetForm() {
         $this->name = '';
         $this->username = '';
@@ -106,6 +87,25 @@ $this->validateOnly($propertyName);
         ]);
 
         $this->firstStep = false;
+    }
+
+    public function updated($propertyName) {
+$this->validateOnly($propertyName);
+    }
+
+    public function submit() {
+        if (!$this->acceptedTerms) {
+            session()->flash('termsMessage', 'É necessário aceitar os Termos de Serviço para terminar o registo.');
+            return;
+        }
+
+        $this->validate();
+
+        session()->flash('successMessage', "Cadastro realizado com sucesso.\n Logo entraremos em contato.");
+
+        Mail::to($this->email)->send(new RegistoMail($this->email));
+
+        $this->resetForm();
     }
 
     public function render() {
