@@ -61,7 +61,6 @@ class RegisterForm extends Component
 
             default:
                 return [
-                    'username' => 'user name',
                     'phone' => 'phone number',
                     'credit_limit' => 'credit limit',
                 ];

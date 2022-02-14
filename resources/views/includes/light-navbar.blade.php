@@ -17,25 +17,22 @@
                             SMS Marketing
                         </a>
                         <ul class="dropdown-menu bg-white rounded-10" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.em-massa') }}">SMS em Massa</a>
+                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.em-massa') }}">{{__('SMS em Massa')}}</a>
                             </li>
-                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.para-empresa') }}">SMS massivos
-                                    para empresas</a></li>
-                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.rotas-sim') }}">SMS por Rotas
-                                    SIM</a></li>
-                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.sem-restricoes') }}">SMS sem
-                                    Restrições</a></li>
+                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.para-empresa') }}">{{__('SMS massivos para empresas')}}</a></li>
+                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.rotas-sim') }}">{{__('SMS por Rotas SIM')}}</a></li>
+                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.sem-restricoes') }}">{{__('SMS sem Restrições')}}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link position-relative text-light-navbar {{ request()->route()->named('apis') ? 'marked' : null }}" href="{{ route('apis') }}" tabindex="-1"
-                            aria-disabled="true">Apis</a>
+                            aria-disabled="true">{{__('Apis')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link position-relative text-light-navbar font-archivo {{ request()->route()->named('precos') ? 'marked' : null }}" href="{{ route('precos') }}">Preços</a>
+                        <a class="nav-link position-relative text-light-navbar font-archivo {{ request()->route()->named('precos') ? 'marked' : null }}" href="{{ route('precos') }}">{{__('Preços')}}</a>
                     </li>
                     <a class="bg-secondary btn-padding text-white  text-decoration-none rounded-4"
-                        href="{{ route('registo') }}" role="button">Registo</a>
+                        href="{{ route('registo') }}" role="button">{{__('Registo')}}</a>
                 </ul>
             </div>
         </div>

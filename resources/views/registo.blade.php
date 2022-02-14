@@ -23,15 +23,15 @@
             <nav class="fs-16 position-absolute" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active text-end "><a class="fs-15"
-                            href="{{ route('homepage') }}">Voltar para a pagina inicial</a>
+                            href="{{ route('homepage') }}">{{__('Voltar para a página inicial')}}</a>
                     </li>
                 </ol>
             </nav>
 
             <div class="max-form-width mt-6 pt-5 pb-5 pb-lg-0">
                 <header class="text-start text-sm-center">
-                    <h1 class="fs-36-40 fw-bold">Criar Conta</h1>
-                    <p class="fw-500">Crie uma conta para usufruir do nosso serviço</p>
+                    <h1 class="fs-36-40 fw-bold">{{__('Criar Conta')}}</h1>
+                    <p class="fw-500">{{__('Crie uma conta para usufruir do nosso serviço')}}</p>
                 </header>
 
                 <livewire:register-form />
