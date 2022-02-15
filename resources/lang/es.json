@@ -11,7 +11,7 @@
     "Experimente grátis a nossa plataforma de marketing por sms": "Pruebe nuestra plataforma de marketing por sms gratis",
     "Enviar SMS em massa online nunca foi tão fácil e intuitivo. Registe-se e aceda já à plataforma WAUSMS. Experimente de forma completamente grátis e conheça a ferramenta de envio de SMS mais completa do mercado. Funcionalidades Premium a preços low cost.": "Enviar SMS masivos online nunca ha sido tan fácil e intuitivo. Regístrese y acceda ahora a la plataforma WAUSMS. Pruébalo completamente gratis y conosca la herramienta de envío de SMS más completa del mercado. Funciones prémium a precios de bajo costo.",
     "Registo gratuito": "Inscripción gratis",
-    "Espaço cliente": "Espacio cliente.",
+    "Espaço cliente": "Espacio cliente",
 
     "Sms Marketing desde": "SMS Marketing a partir de",
     "Com uma taxa de leitura de 99,9%, e com custos de entrega desde 1,9 CENT. por mensagem o SMS Marketing é de longe e sem duvida o mais eficiente canal de que dispõe para veicular a sua comunicação.": "Con una tasa de lectura del 99,9% y gastos de envío a partir de 1,9 centavos por mensaje, SMS Marketing es, de lejos y sin duda, el canal más eficaz disponible para transmitir su comunicación.",
@@ -117,7 +117,7 @@
     "A API de conexão HTTP permite integrar a sua aplicação com o nosso Gateway para o envio de SMS, utilizando o protocolo HTTP ou HTTPS ( para transações seguras através de criptografia SSL). Ambos os pedidos e as respostas são feitas API REST em formato JSON, tornando muito simples de usar API com qualquer linguagem de programação.": "La API de conexión HTTP te permite integrar tu aplicación con nuestro Gateway para el envío de SMS, utilizando el protocolo HTTP o HTTPS (para transacciones seguras mediante encriptación SSL). Tanto las solicitaciones como las respuestas de la API REST se realizan en formato JSON, lo que facilita mucho el uso de la API con cualquier lenguaje de programación.",
     "Ver documentação": "Ver documentación",
     "Integração HTTP através de GET": "Integración HTTP a través de GET",
-    "A API de integração HTTP através de GET é a API de integração mais simples para o envio de SMS. Por norma, esta implementação é muito rápida e fácil, suportando uma ampla gama de tipos de mensagens e de funcionalidades. Devido ao seu tempo de integração, apenas é necessário um equipamento informático no qual possa executar o script ou a aplicação e um navegador ou um ferramenta http.": "La API de integración HTTP a través de GET es la API de integración más simple para enviar SMS. Por lo general ,  esta implementación es muy rápida y sencilla, y admite una amplia variedad de tipos de mensajes y funciones. Debido a su tiempo de integración, todo lo que necesita es un dispositivo informático en el que pueda ejecutar el script o la aplicación y un navegador o una herramienta http.",
+    "A API de integração HTTP através de GET é a API de integração mais simples para o envio de SMS. Por norma, esta implementação é muito rápida e fácil, suportando uma ampla gama de tipos de mensagens e de funcionalidades. Devido ao seu tempo de integração, apenas é necessário um equipamento informático no qual possa executar o script ou a aplicação e um navegador ou um ferramenta http.": "La API de integración HTTP a través de GET es la API de integración más simple para enviar SMS. Por lo general,  esta implementación es muy rápida y sencilla, y admite una amplia variedad de tipos de mensajes y funciones. Debido a su tiempo de integración, todo lo que necesita es un dispositivo informático en el que pueda ejecutar el script o la aplicación y un navegador o una herramienta http.",
     "Integração através do protocolo padrão de SMS": "Integración a través protocolo SMS estándar",
     "O protocolo Short Message Peer to Peer (SMPP) é o protocolo que considera padrão da indústria para envio de SMS para o padrão da indústria de mensagens rede do provedor projetado para simplificar a integração de aplicativos de dados com as redes móveis sem fio.": "El protocolo Short Message Peer to Peer (SMPP) es el protocolo estándar de la industria para enviar SMS a la red del proveedor de mensajería estándar de la industria, diseñado para simplificar la integración de aplicaciones de datos con redes inalámbricas móviles.",
     "Além disso, trata-se do protocolo mais utilizado na indústria de telecomunicações para o intercâmbio de mensagens entre os SMSC (Short Message Service Centers) e ESME (External Short Messaging Entities). Este protocolo garante a entrega rápida de SMS, permitindo que vários pedidos de uma só vez.": "Además, es el protocolo más utilizado en la industria de las telecomunicaciones para el intercambio de mensajes entre SMSC (Short Message Service Centerss) y ESME (External Short Messaging Entities). Este protocolo garantiza la entrega rápida de SMS, lo que permite múltiples pedidos a la vez.",
@@ -135,6 +135,10 @@
     "Limite de crédito": "Límite de crédito",
     "Estado - Inátivo": "Estado - Inactivo",
     "Li e concordo com os termos de Termos de Serviço": "He leído y acepto los Términos de Servicio.",
+
+    "Bem-vindo!": "¡Bienvenido!",
+    "Visite nosso espaço cliente e confira nossos serviços.": "Visite nuestro Espacio Cliente y consulte nuestros servicios.",
+    "Obrigado": "Gracias",
 
     "Painel com gráfico de distribuição por país e tabela de custos.": "Panel con gráfico de distribución por país y tabla de costes.",
     "Painel com gráfico de envios totais, programados, manuais e externos.": "Panel con gráfico de envíos totales, programados, manuales y externos.",
