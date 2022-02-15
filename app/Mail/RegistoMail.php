@@ -30,6 +30,6 @@ class RegistoMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.registo')->to($this->email)->subject('MTC Registo');
+        return $this->subject('MTC Registo')->markdown('mails.registo');
     }
 }
