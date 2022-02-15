@@ -44,6 +44,10 @@
     font-weight: 500;
 }
 
+.hover-fw-500:hover {
+    font-weight: 500;
+}
+
 .fw-lg-500 {
     @include media-breakpoint-up(lg) {
         font-weight: 500 !important;

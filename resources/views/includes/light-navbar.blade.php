@@ -17,11 +17,11 @@
                             SMS Marketing
                         </a>
                         <ul class="dropdown-menu bg-white rounded-10" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.em-massa') }}">{{__('SMS em Massa')}}</a>
+                            <li><a class="dropdown-item text-light-navbar hover-fw-500" href="{{ route('sms-marketing.em-massa') }}">{{__('SMS em Massa')}}</a>
                             </li>
-                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.para-empresa') }}">{{__('SMS massivo para empresas')}}</a></li>
-                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.rotas-sim') }}">{{__('SMS por Rotas SIM')}}</a></li>
-                            <li><a class="dropdown-item text-light-navbar" href="{{ route('sms-marketing.sem-restricoes') }}">{{__('SMS sem Restrições')}}</a></li>
+                            <li><a class="dropdown-item text-light-navbar hover-fw-500" href="{{ route('sms-marketing.para-empresa') }}">{{__('SMS massivo para empresas')}}</a></li>
+                            <li><a class="dropdown-item text-light-navbar hover-fw-500" href="{{ route('sms-marketing.rotas-sim') }}">{{__('SMS por Rotas SIM')}}</a></li>
+                            <li><a class="dropdown-item text-light-navbar hover-fw-500" href="{{ route('sms-marketing.sem-restricoes') }}">{{__('SMS sem Restrições')}}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

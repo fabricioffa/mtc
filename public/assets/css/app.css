@@ -3774,7 +3774,7 @@ textarea.form-control-lg {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #141415;
+  background-color: none;
 }
 .dropdown-item.disabled, .dropdown-item:disabled {
   color: #adb5bd;
@@ -3815,7 +3815,7 @@ textarea.form-control-lg {
 }
 .dropdown-menu-dark .dropdown-item.active, .dropdown-menu-dark .dropdown-item:active {
   color: #fff;
-  background-color: #141415;
+  background-color: none;
 }
 .dropdown-menu-dark .dropdown-item.disabled, .dropdown-menu-dark .dropdown-item:disabled {
   color: #adb5bd;
@@ -11579,6 +11579,10 @@ footer div.position-absolute {
 }
 
 .fw-500 {
+  font-weight: 500;
+}
+
+.hover-fw-500:hover {
   font-weight: 500;
 }
 
