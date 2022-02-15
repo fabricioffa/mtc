@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'SMS\'s massivos para empresa')
+@section('title') {{__('SMS massivo para empresas')}} @endsection
 
 @include('includes.light-navbar')
 
@@ -22,7 +22,7 @@
                     class="banner-balloon col-sm-10 col-md-8 col-lg-5 align-self-lg-end bg-white rounded-10 font-archivo position-relative mx-auto mx-lg-0 pt-3 pb-4 my-5 mb-lg-0 mt-lg-4">
                     <div class="d-flex justify-content-between border-bottom border-color-b6  ps-4 pe-3 pb-2">
                         <h4 class="fw-500 fs-16-22 text-0e">{{__('Para Portugal')}}</h4>
-                        <img src="{{ asset('assets/imgs/icons/flags/portugal-small.svg') }}" alt="Bandeira de Portugal">
+                        <img src="{{ asset('assets/imgs/icons/flags/portugal-small.svg') }}" alt="{{__('Bandeira de')}} Portugal">
                     </div>
                     <div class="d-flex flex-column align-items-start ps-4 pe-3 h-100">
                         <p class="text-secondary fs-18-32 fw-500 pt-sm-4 mt-2">0.019€ / {{__('por Sms')}}</p>
@@ -54,7 +54,7 @@
                 <div class="d-flex flex-wrap gap-2 gap-lg-custom-1 text-center pb-3 pb-lg-2 mb-1">
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/canada.svg') }}"
-                            alt="Bandeira do Canadá" class="d-block mx-auto">
+                            alt="{{__('Bandeira do')}}')}} {{__('Canadá')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Canadá')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -62,7 +62,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/france.svg') }}"
-                            alt="Bandeira da França" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('França')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('França')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -70,7 +70,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/swiss.svg') }}"
-                            alt="Bandeira da Suiça" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('Suiça')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Suiça')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -78,7 +78,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/china.svg') }}"
-                            alt="Bandeira da China" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} China" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">China</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -86,7 +86,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/spain.svg') }}"
-                            alt="Bandeira da Espanha" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('Espanha')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Espanha')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -95,7 +95,7 @@
 
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/uk.svg') }}"
-                            alt="Bandeira do Reino Unido" class="d-block mx-auto">
+                            alt="{{__('Bandeira do')}} {{__('Reino Unido')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Reino Unido')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -103,7 +103,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/indonesia.svg') }}"
-                            alt="Bandeira da Indonésia" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('Indonésia')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Indonésia')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -111,7 +111,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/italy.svg') }}"
-                            alt="Bandeira da Itália" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('Itália')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Itália')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -119,7 +119,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/netherlands.svg') }}"
-                            alt="Bandeira da Holanda" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('Holanda')}}" class="d-block mx-auto">
                                 <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Holanda')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -127,7 +127,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/norway.svg') }}"
-                            alt="Bandeira da Noruega" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('Noruega')}}" class="d-block mx-auto">
                                 <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Noruega')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -136,7 +136,7 @@
 
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/new-zeland.svg') }}"
-                            alt="Bandeira da Nova Zelândia" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('Nova Zelândia')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Nova Zelândia')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -144,7 +144,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/pakistan.svg') }}"
-                            alt="Bandeira do Paquistão" class="d-block mx-auto">
+                            alt="{{__('Bandeira do')}} {{__('Paquistão')}}" class="d-block mx-auto">
                                 <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Paquistão')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -152,7 +152,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/sweden.svg') }}"
-                            alt="Bandeira da Suécia" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('Suécia')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Suécia')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -160,7 +160,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/singapure.svg') }}"
-                            alt="Bandeira da Cingapura" class="d-block mx-auto">
+                            alt="{{__('Bandeira da')}} {{__('Cingapura')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Cingapura')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -168,7 +168,7 @@
                     </div>
                     <div class="flex-grow-1 bg-white rounded-5 pt-4 pb-3 px-4">
                         <img class="mb-1" src="{{ asset('assets/imgs/icons/flags/eua.svg') }}"
-                            alt="Bandeira dos Estados Unidos" class="d-block mx-auto">
+                            alt="{{__('Bandeira dos')}} {{__('Estados Unidos')}}" class="d-block mx-auto">
                         <h6 class="fs-17 fw-500 text-1d1e1f">{{__('Estados Unidos')}}</h6>
                         <p class="fs-17 text-1d1e1f fw-500 mb-0"><span class="fw-bold fs-24 text-secondary">0.01010</span>
                             €/SMS
@@ -201,128 +201,128 @@
                 <div
                     class="row-cols-1 row-cols-lg-3 row-cols-xxl-4 d-flex flex-wrap gap-2 gap-lg-custom-2 pb-3 pb-lg-2 mb-1">
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/andorra.svg') }}" alt="Bandeira de Andorra">
+                        <img src="{{ asset('assets/imgs/icons/flags/andorra.svg') }}" alt="{{__('bandeira de')}} Andorra">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Andorra')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
                         <img src="{{ asset('assets/imgs/icons/flags/emirates.svg') }}"
-                            alt="Bandeira dos Emirados Árabes Unidos">
+                            alt="{{__('Bandeira dos')}} {{__('Emirados Árabes Unidos')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Emirados')}}<br>{{__('Árabes Unidos')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/afghanistan.svg') }}" alt="Bandeira do Afeganistão">
+                        <img src="{{ asset('assets/imgs/icons/flags/afghanistan.svg') }}" alt="{{__('Bandeira do')}} {{__('Afeganistão')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Afeganistão')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
                         <img src="{{ asset('assets/imgs/icons/flags/antigua-barbuda.svg') }}"
-                            alt="Bandeira de Antígua e Barbuda">
+                            alt="{{__('Bandeira de')}} {{__('Antígua e')}} Barbuda">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Antígua e')}}<br> {{__('Barbuda')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/albania.svg') }}" alt="Bandeira da Albânia">
+                        <img src="{{ asset('assets/imgs/icons/flags/albania.svg') }}" alt="{{__('Bandeira da')}} {{__('Albânia')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Albânia')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
 
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/armenia.svg') }}" alt="Bandeira da Armênia">
+                        <img src="{{ asset('assets/imgs/icons/flags/armenia.svg') }}" alt="{{__('Bandeira da')}} {{__('Armênia')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Armênia')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/angola.svg') }}" alt="Bandeira da Angola">
+                        <img src="{{ asset('assets/imgs/icons/flags/angola.svg') }}" alt="{{__('Bandeira da')}} Angola">
                         <h6 class="fw-500 text-1d1e1f ms-3">Angola</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/argentina.svg') }}" alt="Bandeira do Argentina">
+                        <img src="{{ asset('assets/imgs/icons/flags/argentina.svg') }}" alt="{{__('Bandeira do')}} Argentina">
                         <h6 class="fw-500 text-1d1e1f ms-3">Argentina</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/austria.svg') }}" alt="Bandeira da Áustria">
+                        <img src="{{ asset('assets/imgs/icons/flags/austria.svg') }}" alt="{{__('Bandeira da')}} {{__('Áustria')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Áustria')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/australia.svg') }}" alt="Bandeira da Austrália">
+                        <img src="{{ asset('assets/imgs/icons/flags/australia.svg') }}" alt="{{__('Bandeira da')}} {{__('Austrália')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Austrália')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/aruba.svg') }}" alt="Bandeira de Aruba">
+                        <img src="{{ asset('assets/imgs/icons/flags/aruba.svg') }}" alt="{{__('Bandeira de')}} Aruba">
                         <h6 class="fw-500 text-1d1e1f ms-3">Aruba</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/azerbaijan.svg') }}" alt="Bandeira do Azerbaijão">
+                        <img src="{{ asset('assets/imgs/icons/flags/azerbaijan.svg') }}" alt="{{__('Bandeira do')}} {{__('Azerbaijão')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Azerbaijão')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/andorra.svg') }}" alt="Bandeira de Andorra">
+                        <img src="{{ asset('assets/imgs/icons/flags/andorra.svg') }}" alt="{{__('Bandeira de')}} Andorra">
                         <h6 class="fw-500 text-1d1e1f ms-3">Andorra</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
                         <img src="{{ asset('assets/imgs/icons/flags/emirates.svg') }}"
-                            alt="Bandeira dos Emirados Árabes Unidos">
-                        <h6 class="fw-500 text-1d1e1f ms-3">Emirados<br>Árabes Unidos</h6>
+                            alt="{{__('Bandeira do')}}s Emirados Árabes Unidos">
+                        <h6 class="fw-500 text-1d1e1f ms-3">{{__('Emirados')}}<br>{{__('Árabes Unidos')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/afghanistan.svg') }}" alt="Bandeira do Afeganistão">
+                        <img src="{{ asset('assets/imgs/icons/flags/afghanistan.svg') }}" alt="{{__('Bandeira do')}} {{__('Afeganistão')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Afeganistão')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
                         <img src="{{ asset('assets/imgs/icons/flags/antigua-barbuda.svg') }}"
-                            alt="Bandeira de Antígua e Barbuda">
+                            alt="{{__('Bandeira de')}} {{__('Antígua e')}} Barbuda">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Antígua e')}}<br> Barbuda</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/albania.svg') }}" alt="Bandeira da Albânia">
+                        <img src="{{ asset('assets/imgs/icons/flags/albania.svg') }}" alt="{{__('Bandeira da')}} {{__('Albânia')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Albânia')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
 
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/armenia.svg') }}" alt="Bandeira da Armênia">
+                        <img src="{{ asset('assets/imgs/icons/flags/armenia.svg') }}" alt="{{__('Bandeira da')}} {{__('Armênia')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Armênia')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/angola.svg') }}" alt="Bandeira da Angola">
+                        <img src="{{ asset('assets/imgs/icons/flags/angola.svg') }}" alt="{{__('Bandeira da')}} Angola">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Angola')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/argentina.svg') }}" alt="Bandeira do Argentina">
+                        <img src="{{ asset('assets/imgs/icons/flags/argentina.svg') }}" alt="{{__('Bandeira do')}} Argentina">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Argentina')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/austria.svg') }}" alt="Bandeira da Áustria">
+                        <img src="{{ asset('assets/imgs/icons/flags/austria.svg') }}" alt="{{__('Bandeira da')}} {{__('Áustria')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Áustria')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/australia.svg') }}" alt="Bandeira da Austrália">
+                        <img src="{{ asset('assets/imgs/icons/flags/australia.svg') }}" alt="{{__('Bandeira da')}} {{__('Austrália')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Austrália')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/aruba.svg') }}" alt="Bandeira de Aruba">
+                        <img src="{{ asset('assets/imgs/icons/flags/aruba.svg') }}" alt="{{__('Bandeira de')}} Aruba">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Aruba')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center bg-white rounded-5 py-4 ps-4 pe-3">
-                        <img src="{{ asset('assets/imgs/icons/flags/azerbaijan.svg') }}" alt="Bandeira do Azerbaijão">
+                        <img src="{{ asset('assets/imgs/icons/flags/azerbaijan.svg') }}" alt="{{__('Bandeira do')}} {{__('Azerbaijão')}}">
                         <h6 class="fw-500 text-1d1e1f ms-3">{{__('Azerbaijão')}}</h6>
                         <p class="fw-bold fs-18-24 text-secondary ms-auto mb-0">0.01010€</p>
                     </div>

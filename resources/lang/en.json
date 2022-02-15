@@ -1,6 +1,6 @@
 {
     "SMS em Massa": "Mass SMS",
-    "SMS massivos para empresas": "Mass SMS for companies",
+    "SMS massivo para empresas": "Mass SMS for companies",
     "SMS por Rotas SIM": "SMS via SIM routes",
     "SMS sem Restrições": "SMS without restrictions",
     "SMS Sem Restrições": "SMS without restrictions",
@@ -146,5 +146,18 @@
     "Telefone": "Phone number",
     "Limite de crédito": "Credit limit",
     "Estado - Inátivo": "State - Inactive",
-    "Li e concordo com os termos de Termos de Serviço": "I've read and agree with the Terms and Conditions."
+    "Li e concordo com os termos de Termos de Serviço": "I've read and agree with the Terms and Conditions.",
+
+    "Painel com gráfico de distribuição por país e tabela de custos.": "Panel with country distribution chart and costs table.",
+    "Painel com gráfico de envios totais, programados, manuais e externos.": "Panel with total, scheduled, manual, and external sendings chart.",
+    "Painel com descriminação de custos por serviço e calendário de envios": "Panel with costs breakdown by service and dispatches calendar.",
+    "Painel com gráfico geográfico: quantidade, stato e custo dos envios.": "Panel with a geographic graph: quantity, status, and cost of shipments.",
+    "Painel com calendário dos envios.": "Panel with dispatches calendar.",
+    "Painel com estado e detalhes do envio.": "Panel with sending status and details.",
+    "Painel com tabela de contatos: opções de exportar ou excluir contato.": "Panel with contacts table: options to export or delete a contact.",
+    "Bandeira de": "Flag of",
+    "Bandeira da": "Flag of",
+    "Bandeira do": "Flag of",
+    "Bandeira dos": "Flag of the",
+    "Emirados Árabes Unidos": "United Arab Emirates"
 }

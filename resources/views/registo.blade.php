@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Criar conta')
+@section('title') {{__('Criar Conta')}} @endsection
 
 @push('stylesheet')
     @livewireStyles

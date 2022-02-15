@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'API’s de conexão')
+@section('title') {{__('API’s de conexão')}} @endsection
 
 @include('includes.dark-navbar')
 

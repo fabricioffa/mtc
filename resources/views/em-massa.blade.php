@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'SMS em massa')
+@section('title') {{__('SMS em Massa')}} @endsection
 
 @include('includes.dark-navbar')
 
@@ -77,7 +77,7 @@
                         </div>
                         <div class="col-lg-7 mt-4 mt-lg-0">
                             <img class="img-fluid rounded-12" src="{{ asset('assets/imgs/panels/em-massa/panel-1.png') }}"
-                                alt="Painel com tabela de contatos, com opção de exportar e de excluir contato.">
+                                alt="{{__('Painel com tabela de contatos: opções de exportar ou excluir contato.')}}">
                         </div>
                     </div>
                 </div>

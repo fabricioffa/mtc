@@ -151,7 +151,7 @@
                         </div>
                         <div class="col-lg-7">
                             <img class="img-fluid rounded-12" src="{{ asset('assets/imgs/panels/home/panel-1.png') }}"
-                                alt="Painel com gráfico de distribuição por país e tabela de custos.">
+                                alt="{{__('Painel com gráfico de distribuição por país e tabela de custos.')}}">
                         </div>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                         </div>
                         <div class="col-lg-7">
                             <img class="img-fluid rounded-12" src="{{ asset('assets/imgs/panels/home/panel-2.png') }}"
-                                alt="Painel com gráfico de envios totais, programados, manuais e externos.">
+                                alt="{{__('Painel com gráfico de envios totais, programados, manuais e externos.')}}">
                         </div>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                         </div>
                         <div class="col-lg-7">
                             <img class="img-fluid rounded-12" src="{{ asset('assets/imgs/panels/home/panel-3.png') }}"
-                                alt="Painel com descriminação de custos por serviço e calendário de envios">
+                                alt="{{__('Painel com descriminação de custos por serviço e calendário de envios')}}">
                         </div>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
                         </div>
                         <div class="col-lg-7">
                             <img class="img-fluid rounded-12" src="{{ asset('assets/imgs/panels/home/panel-4.png') }}"
-                                alt="Painel com gráfico geográfico, com quantidade, stato e custo dos envios.">
+                                alt="{{__('Painel com gráfico geográfico: quantidade, stato e custo dos envios.')}}">
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
                         </div>
                         <div class="col-lg-7">
                             <img class="img-fluid rounded-12" src="{{ asset('assets/imgs/panels/home/panel-5.png') }}"
-                                alt="Painel com palendário dos envios.">
+                                alt="{{__('Painel com calendário dos envios.')}}">
                         </div>
                     </div>
                 </div>
@@ -241,7 +241,7 @@
                         </div>
                         <div class="col-lg-7">
                             <img class="img-fluid rounded-12" src="{{ asset('assets/imgs/panels/home/panel-6.png') }}"
-                                alt="Painel com estado do envio e detalhes do envio.">
+                                alt="{{__('Painel com estado e detalhes do envio.')}}">
                         </div>
                     </div>
                 </div>
@@ -271,7 +271,7 @@
                                 <div class="mt-5">
                                     <img class="img-fluid rounded-12"
                                         src="{{ asset('assets/imgs/panels/home/panel-1.png') }}"
-                                        alt="Painel com gráfico de distribuição por país e tabela de custos.">
+                                        alt="{{__('Painel com gráfico de distribuição por país e tabela de custos.')}}">
                                 </div>
                             </div>
                         </div>
@@ -297,7 +297,7 @@
                                 <div class="mt-5">
                                     <img class="img-fluid rounded-12"
                                         src="{{ asset('assets/imgs/panels/home/panel-2.png') }}"
-                                        alt="Painel com gráfico de envios totais, programados, manuais e externos.">
+                                        alt="{{__('Painel com gráfico de envios totais, programados, manuais e externos.')}}">
                                 </div>
                             </div>
                         </div>
@@ -323,7 +323,7 @@
                                 <div class="mt-5">
                                     <img class="img-fluid rounded-12"
                                         src="{{ asset('assets/imgs/panels/home/panel-3.png') }}"
-                                        alt="Painel com descriminação de custos por serviço e calendário de envios">
+                                        alt="{{__('Painel com descriminação de custos por serviço e calendário de envios')}}">
                                 </div>
                             </div>
                         </div>
@@ -349,7 +349,7 @@
                                 <div class="mt-5">
                                     <img class="img-fluid rounded-12"
                                         src="{{ asset('assets/imgs/panels/home/panel-4.png') }}"
-                                        alt="Painel com gráfico geográfico, com quantidade, stato e custo dos envios.">
+                                        alt="{{__('Painel com gráfico geográfico: quantidade, stato e custo dos envios.')}}">
                                 </div>
                             </div>
                         </div>
@@ -375,7 +375,7 @@
                                 <div class="mt-5">
                                     <img class="img-fluid rounded-12"
                                         src="{{ asset('assets/imgs/panels/home/panel-5.png') }}"
-                                        alt="Painel com palendário dos envios.">
+                                        alt="{{__('Painel com calendário dos envios.')}}">
                                 </div>
                             </div>
                         </div>
@@ -401,7 +401,7 @@
                                 <div class="mt-5">
                                     <img class="img-fluid rounded-12"
                                         src="{{ asset('assets/imgs/panels/home/panel-6.png') }}"
-                                        alt="Painel com estado do envio e detalhes do envio.">
+                                        alt="{{__('Painel com estado e detalhes do envio.')}}">
                                 </div>
                             </div>
                         </div>
