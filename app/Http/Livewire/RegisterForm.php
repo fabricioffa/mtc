@@ -67,6 +67,34 @@ class RegisterForm extends Component
         }
     }
 
+    private function getTermsMsg(): string
+    {
+        switch (App::getLocale()) {
+            case 'pt':
+                return 'É necessário aceitar os Termos de Serviço para terminar o registo.';
+
+            case 'es':
+                return 'Hay que aceptar los Términos de Servicio para completar el registro.';
+
+            default:
+                return 'It\'s necessary to accept the Terms of Service to complete registration.';
+        }
+    }
+
+    private function getSuccessMsg(): string
+    {
+        switch (App::getLocale()) {
+            case 'pt':
+                return 'Cadastro realizado com sucesso. Logo entraremos em contato.';
+
+            case 'es':
+                return 'Registro exitoso. Nos pondremos en contacto pronto.';
+
+            default:
+                return 'Successful registration. We\'ll be in touch soon.';
+        }
+    }
+
     private function resetForm() {
         $this->name = '';
         $this->username = '';
@@ -94,13 +122,13 @@ $this->validateOnly($propertyName);
 
     public function submit() {
         if (!$this->acceptedTerms) {
-            session()->flash('termsMessage', 'É necessário aceitar os Termos de Serviço para terminar o registo.');
+            session()->flash('termsMsg', $this->getTermsMsg());
             return;
         }
 
         $this->validate();
 
-        session()->flash('successMessage', "Cadastro realizado com sucesso.\n Logo entraremos em contato.");
+        session()->flash('successMsg', $this->getSuccessMsg());
 
         Mail::to($this->email)->send(new RegistoMail($this->email));
 

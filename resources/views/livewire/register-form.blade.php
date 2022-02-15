@@ -1,9 +1,9 @@
 <form class="fs-14 fw-500" wire:submit.prevent="submit" method="POST">
     @csrf
 
-    @if (session()->has('successMessage'))
+    @if (session()->has('successMsg'))
     <div class="alert alert-success text-center d-flex flex-column-reverse {{$hidden}}">
-        <p>{{ session('successMessage') }}</p>
+        <p>{{ session('successMsg') }}</p>
         <div class="position-relative flash-close-btn align-self-end"
             role="button" aria-label="fechar" wire:click="$set('hidden', 'd-none')"></div>
     </div>
@@ -155,9 +155,9 @@
             <label for="register-terms">{{__('Li e concordo com os termos de Termos de Serviço')}}</label>
         </section>
 
-        @if (session()->has('termsMessage'))
+        @if (session()->has('termsMsg'))
             <div class="alert alert-danger mt-1 py-2">
-                {{ session('termsMessage') }}
+                {{ session('termsMsg') }}
             </div>
         @endif
 
