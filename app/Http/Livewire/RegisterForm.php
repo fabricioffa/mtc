@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Mail\RegistoMail;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
+use Laravel\Socialite\Facades\Socialite;
 use Livewire\Component;
 
 class RegisterForm extends Component
@@ -36,8 +37,11 @@ class RegisterForm extends Component
         $this->validationAttributes = $this->getAttributesNames();
     }
 
-    private function getAttributesNames(): array
-    {
+    public function updated($propertyName) {
+        $this->validateOnly($propertyName);
+    }
+
+    private function getAttributesNames(): array {
         switch (App::getLocale()) {
             case 'pt':
                 return [
@@ -67,8 +71,7 @@ class RegisterForm extends Component
         }
     }
 
-    private function getTermsMsg(): string
-    {
+    private function getTermsMsg(): string {
         switch (App::getLocale()) {
             case 'pt':
                 return 'É necessário aceitar os Termos de Serviço para terminar o registo.';
@@ -78,11 +81,10 @@ class RegisterForm extends Component
 
             default:
                 return 'It\'s necessary to accept the Terms of Service to complete registration.';
-        }
+            }
     }
 
-    private function getSuccessMsg(): string
-    {
+    private function getSuccessMsg(): string {
         switch (App::getLocale()) {
             case 'pt':
                 return 'Cadastro realizado com sucesso. Logo entraremos em contato.';
@@ -116,10 +118,6 @@ class RegisterForm extends Component
         $this->firstStep = false;
     }
 
-    public function updated($propertyName) {
-$this->validateOnly($propertyName);
-    }
-
     public function submit() {
         if (!$this->acceptedTerms) {
             session()->flash('termsMsg', $this->getTermsMsg());
@@ -134,6 +132,16 @@ $this->validateOnly($propertyName);
 
         $this->resetForm();
     }
+
+    public function redirectToProvider() {
+        return Socialite::driver('google')->redirect();
+    }
+
+    // public function handleProviderCallback() {
+    //     $user = Socialite::driver('github')->user();
+
+    //     dd($user);
+    // }
 
     public function render() {
         return view('livewire.register-form');

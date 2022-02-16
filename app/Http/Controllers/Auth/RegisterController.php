@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 
 
-class Register extends Controller
+class RegisterController extends Controller
 {
     public function redirectToProvider()
     {
@@ -16,8 +16,8 @@ class Register extends Controller
 
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('github')->user();
+        $user = Socialite::driver('google')->user();
 
-        dd($user);
+        return redirect()->route('registo', ['userGoogleData' => $user]);
     }
 }

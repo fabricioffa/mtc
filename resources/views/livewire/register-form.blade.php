@@ -89,9 +89,9 @@
             <button wire:click="nextStep"
                 class="d-block bg-secondary rounded-4 border-0 font-archivo fs-15 text-white mx-auto py-2 px-5"
                 type="button">{{__('Continuar')}}</button>
-            <p class="my-4 between-lines position-relative">Ou</p>
+            {{-- <p class="my-4 between-lines position-relative">Ou</p>
             <a class="bg-white google-logo position-relative border border-color-ef fs-15 fw-500 test-2b2d42 text-decoration-none text-nowrap py-2 px-5"
-                href="/auth/redirect" role="button">Criar conta com o google</a>
+                href="/auth/redirect" role="button">Criar conta com o google</a> --}}
         </section>
     </fieldset>
 
