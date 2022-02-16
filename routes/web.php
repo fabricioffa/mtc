@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\Register;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,3 +52,7 @@ Route::get('registo', function () {
 Route::get('registo/mail', function () {
     return view('mails.registo');
 });
+
+Route::get('/auth/redirect', [Register::class, 'redirectToProvider']);
+
+Route::get('/auth/callback', [Register::class, 'handleProviderCallback']);
