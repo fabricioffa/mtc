@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Mail\RegistoMail;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
-use Laravel\Socialite\Facades\Socialite;
 use Livewire\Component;
 
 class RegisterForm extends Component
@@ -132,16 +131,6 @@ class RegisterForm extends Component
 
         $this->resetForm();
     }
-
-    public function redirectToProvider() {
-        return Socialite::driver('google')->redirect();
-    }
-
-    // public function handleProviderCallback() {
-    //     $user = Socialite::driver('github')->user();
-
-    //     dd($user);
-    // }
 
     public function render() {
         return view('livewire.register-form');

@@ -50,6 +50,6 @@ Route::get('registo', function () {
 })->name('registo');
 
 
-// Route::get('/auth/redirect', [RegisterController::class, 'redirectToProvider']);
+Route::get('/auth/redirect', [RegisterController::class, 'redirectToProvider']);
 
-// Route::get('registo/auth/callback', [RegisterController::class, 'handleProviderCallback']);
+Route::get('registo/auth/callback', [RegisterController::class, 'handleProviderCallback']);
