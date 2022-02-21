@@ -20,6 +20,11 @@ class RegisterForm extends Component
     public $password_confirmation;
     public $phone;
     public $credit_limit;
+    public $country = 'pt';
+    public $currency = 'eur';
+    public $state;
+    public $captcha;
+    public $variavel;
 
     protected $rules = [
         'name' => 'sometimes|nullable|alpha|min:2|max:50',
@@ -27,10 +32,16 @@ class RegisterForm extends Component
         'email' => 'required|email',
         'password' => 'required|min:6|max:8|confirmed',
         'phone' => 'nullable|regex:/^([0-9\s\-\+\(\)]*)$/|min:6|max:30',
-        'credit_limit' => 'nullable|numeric',
+        'credit_limit' => 'nullable|numeric|max:10000000',
+        'captcha' => 'required|captcha',
     ];
 
     protected $validationAttributes;
+
+    public function mount ()
+    {
+        $this->variavel = captcha_src('flat');
+    }
 
     public function boot() {
         $this->validationAttributes = $this->getAttributesNames();
@@ -83,10 +94,23 @@ class RegisterForm extends Component
             }
     }
 
+    private function getUnreachableEmailMsg(): string {
+        switch (App::getLocale()) {
+            case 'pt':
+                return 'O email fornecido parece não existir.';
+
+            case 'es':
+                return 'El correo electrónico proporcionado no parece existir.';
+
+            default:
+                return 'It seems that the email provided does not exist';
+        }
+    }
+
     private function getSuccessMsg(): string {
         switch (App::getLocale()) {
             case 'pt':
-                return 'Cadastro realizado com sucesso. Logo entraremos em contato.';
+                return 'Registo realizado com sucesso. Logo entraremos em contato.';
 
             case 'es':
                 return 'Registro exitoso. Nos pondremos en contacto pronto.';
@@ -94,6 +118,13 @@ class RegisterForm extends Component
             default:
                 return 'Successful registration. We\'ll be in touch soon.';
         }
+    }
+
+
+    public function reloadCaptcha()
+    {
+        $this->variavel = captcha_src('flat');
+        // $this->dispatchBrowserEvent('reloadCaptcha');
     }
 
     private function resetForm() {
@@ -118,16 +149,19 @@ class RegisterForm extends Component
     }
 
     public function submit() {
-        if (!$this->acceptedTerms) {
-            session()->flash('termsMsg', $this->getTermsMsg());
-            return;
-        }
+        if (!$this->acceptedTerms) return session()->flash('termsMsg', $this->getTermsMsg());
 
         $this->validate();
 
-        session()->flash('successMsg', $this->getSuccessMsg());
+        try {
+            Mail::to($this->email)->send(new RegistoMail($this->email));
+        } catch (\Throwable $e) {
+            $this->firstStep = true;
+            $this->addError('email', $this->getUnreachableEmailMsg());
+            return;
+        }
 
-        Mail::to($this->email)->send(new RegistoMail($this->email));
+        session()->flash('successMsg', $this->getSuccessMsg());
 
         $this->resetForm();
     }

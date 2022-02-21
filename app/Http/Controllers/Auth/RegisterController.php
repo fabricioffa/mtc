@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\RegistoMail;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 use Laravel\Socialite\Facades\Socialite;
@@ -16,7 +15,7 @@ class RegisterController extends Controller
     private function getSuccessMsg(): string {
         switch (App::getLocale()) {
             case 'pt':
-                return 'Cadastro realizado com sucesso. Logo entraremos em contato.';
+                return 'Registo realizado com sucesso. Logo entraremos em contato.';
 
             case 'es':
                 return 'Registro exitoso. Nos pondremos en contacto pronto.';
@@ -37,6 +36,6 @@ class RegisterController extends Controller
 
         Mail::to($user->email)->send(new RegistoMail($user->email));
 
-        return redirect()->route('registo')->with('status', $this->getSuccessMsg());
+        return redirect()->route('registo')->with('successMsg', $this->getSuccessMsg());
     }
 }

@@ -70,7 +70,8 @@
                     minlength="6" maxlength="8" aria-describedby="pass-descriptor" required>
             </div>
             <div class="d-flex flex-column flex-grow-1 mt-3 mt-lg-0">
-                <label for="register-pass-rep">{{ __('Repetir') }} password<sup class="text-danger">*</sup></label>
+                <label for="register-pass-rep">{{ __('Repetir') }} password<sup
+                        class="text-danger">*</sup></label>
                 <input
                     class="form-control w-100 bg-efefef border-0 rounded-03 py-2 ps-3 mt-1 @error('password') is-invalid @enderror"
                     type="password" wire:model="password_confirmation" name="password_confirmation"
@@ -90,9 +91,9 @@
             <button wire:click="nextStep"
                 class="d-block bg-secondary rounded-4 border-0 font-archivo fs-15 text-white mx-auto py-2 px-5"
                 type="button">{{ __('Continuar') }}</button>
-            {{-- <p class="my-4 between-lines position-relative">Ou</p>
+            <p class="my-4 between-lines position-relative">Ou</p>
             <a class="bg-white google-logo position-relative border border-color-ef fs-15 fw-500 test-2b2d42 text-decoration-none text-nowrap py-2 px-5"
-                href="/auth/redirect" role="button">Criar conta com o google</a> --}}
+                href="/auth/redirect" role="button">Criar conta com o google</a>
         </section>
     </fieldset>
 
@@ -102,19 +103,19 @@
 
         <section class="d-flex flex-column mt-3">
             <label for="register-country">{{ __('País') }}<sup class="text-danger">*</sup></label>
-            <select class="bg-efefef border-0 rounded-03 py-2 ps-2 pe-3 custom-select-caret mt-1" name="country"
-                id="register-country" required>
-                <option value="portugal">{{ __('Portugal') }}</option>
-                <option value="france">{{ __('França') }}</option>
-                <option value="italy">{{ __('Itália') }}</option>
+            <select class="bg-efefef border-0 rounded-03 py-2 ps-2 pe-3 custom-select-caret mt-1" wire:model="country"
+                name="country" id="register-country" required>
+                <option default value="pt">{{ __('Portugal') }}</option>
+                <option value="fr">{{ __('França') }}</option>
+                <option value="it">{{ __('Itália') }}</option>
             </select>
         </section>
 
         <section class="d-flex flex-column mt-3">
             <label for="register-currency">{{ __('Moeda') }}<sup class="text-danger">*</sup></label>
-            <select class="bg-efefef border-0 rounded-03 py-2 ps-2 pe-3 custom-select-caret mt-1" name="currency"
-                id="register-currency" required>
-                <option value="eur">EUR</option>
+            <select class="bg-efefef border-0 rounded-03 py-2 ps-2 pe-3 custom-select-caret mt-1" wire:model="currency"
+                name="currency" id="register-currency" required>
+                <option default value="eur">EUR</option>
                 <option value="brl">BRL</option>
                 <option value="dol">DOL</option>
             </select>
@@ -136,8 +137,8 @@
             <label class="fs-16" for="register-credit">{{ __('Limite de crédito') }}</label>
             <input
                 class="form-control bg-efefef border-0 rounded-03 py-2 ps-3 mt-1 @error('credit_limit') is-invalid @enderror"
-                type="tel" inputmode="tel" wire:model="credit_limit" name="credit" id="register-credit"
-                autocomplete="tel" min="0" max="1000000">
+                type="number" inputmode="tel" wire:model="credit_limit" name="credit" id="register-credit" min="0"
+                max="10000000">
         </section>
 
         @error('credit_limit')
@@ -145,8 +146,8 @@
         @enderror
 
         <section class="form-check form-switch d-flex align-items-center mt-3 ps-0">
-            <input class="form-check-input custom-register-switch border-0 order-2 mt-0" type="checkbox" name="state"
-                id="register-state">
+            <input class="form-check-input custom-register-switch border-0 order-2 mt-0" type="checkbox"
+                wire:model="state" name="state" id="register-state">
             <label class="form-check-label me-5" for="register-state">{{ __('Estado - Inátivo') }}</label>
         </section>
 
@@ -161,6 +162,20 @@
                 {{ session('termsMsg') }}
             </div>
         @endif
+
+        <section>
+            <div class="captcha" wire:ignore>
+
+                <button wire:click="reloadCaptcha" type="button" class="btn btn-success btn-refresh">Refresh</button>
+            </div>
+
+            <input class="form-control ps-2 @error('captcha') is-invalid @enderror" wire:model="captcha" name="captcha"
+                placeholder="Enter captcha">
+
+            @if ($errors->has('captcha'))
+                <div class="invalid-feedback d-block">{{ $errors->first('captcha') }}</div>
+            @endif
+        </section>
 
         <button class="d-block bg-secondary rounded-4 border-0 font-archivo fs-15 text-white mx-auto py-2 px-5 mt-5"
             type="submit">{{ __('Criar conta') }}</button>
