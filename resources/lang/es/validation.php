@@ -137,4 +137,25 @@ return [
             'min' => 'La :attribute debe contener más de :min caracteres',
         ],
     ],
+
+      /*
+    |--------------------------------------------------------------------------
+    | Custom Validation Attributes
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are used to swap our attribute placeholder
+    | with something more reader friendly such as "E-Mail Address" instead
+    | of "email". This simply helps us make our message more expressive.
+    |
+    */
+
+    'attributes' => [
+        'name' => 'Nombre',
+        'username' => 'Usuario',
+        'email' => 'Email',
+        'password' => 'Password',
+        'phone' => 'Teléfono',
+        'credit_limit' => 'Límite de crédito',
+    ],
 ];
+

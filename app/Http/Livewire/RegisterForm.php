@@ -39,8 +39,6 @@ class RegisterForm extends Component
         'captcha' => 'required|captcha',
     ];
 
-    protected $validationAttributes;
-
     public function data()
     {
         return [
@@ -57,44 +55,10 @@ class RegisterForm extends Component
         ];
     }
 
-    public function boot() {
-        $this->validationAttributes = $this->getAttributesNames();
-    }
-
     public function updated($propertyName) {
         if ($propertyName === 'captcha') return;
 
         $this->validateOnly($propertyName);
-    }
-
-    private function getAttributesNames(): array {
-        switch (App::getLocale()) {
-            case 'pt':
-                return [
-                    'name' => 'nome',
-                    'username' => 'usuário',
-                    'email' => 'email',
-                    'password' => 'password',
-                    'phone' => 'telefone',
-                    'credit_limit' => 'limite de crédito',
-                ];
-
-            case 'es':
-                return [
-                    'name' => 'Nombre',
-                    'username' => 'Usuario',
-                    'email' => 'Email',
-                    'password' => 'Password',
-                    'phone' => 'Teléfono',
-                    'credit_limit' => 'Límite de crédito',
-                ];
-
-            default:
-                return [
-                    'phone' => 'phone number',
-                    'credit_limit' => 'credit limit',
-                ];
-        }
     }
 
     private function resetForm() {
@@ -122,7 +86,6 @@ class RegisterForm extends Component
     public function submit() {
         if (!$this->acceptedTerms){
             session()->flash('termsMsg', __('É necessário aceitar os Termos de Serviço para terminar o registo.'));
-            // $this->reloadCaptcha();
             return $this->reloadCaptcha();
         }
 

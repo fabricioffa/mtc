@@ -159,6 +159,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'phone' => 'phone number',
+        'credit_limit' => 'credit limit',
+    ],
 
 ];
