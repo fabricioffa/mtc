@@ -10,6 +10,8 @@
     <link rel="shortcut icon" href="{{ asset('assets/img/favicons/favicon.ico') }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ mix('assets/css/app.css') }}">
     @stack('stylesheet')
+    <livewire:styles/>
+
 
 </head>
 
@@ -26,6 +28,7 @@
 
     <script src="{{ mix('assets/js/app.js') }}"></script>
     @stack('javascript')
+    <livewire:scripts />
 </body>
 
 </html>

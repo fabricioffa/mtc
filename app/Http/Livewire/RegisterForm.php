@@ -3,8 +3,10 @@
 namespace App\Http\Livewire;
 
 use App\Mail\RegistoMail;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
 class RegisterForm extends Component
@@ -23,8 +25,9 @@ class RegisterForm extends Component
     public $country = 'pt';
     public $currency = 'eur';
     public $state;
+
     public $captcha;
-    public $variavel;
+
 
     protected $rules = [
         'name' => 'sometimes|nullable|alpha|min:2|max:50',
@@ -38,9 +41,20 @@ class RegisterForm extends Component
 
     protected $validationAttributes;
 
-    public function mount ()
+    public function data()
     {
-        $this->variavel = captcha_src('flat');
+        return [
+            'name' => $this->name,
+            'username' => $this->username,
+            'email' => $this->email,
+            'password' => $this->password,
+            'password_confirmation' => $this->password_confirmation,
+            'phone' => $this->phone,
+            'credit_limit' => $this->credit_limit,
+            'country' => $this->country,
+            'currency' => $this->currency ,
+            'state' => $this->state ,
+        ];
     }
 
     public function boot() {
@@ -48,6 +62,8 @@ class RegisterForm extends Component
     }
 
     public function updated($propertyName) {
+        if ($propertyName === 'captcha') return;
+
         $this->validateOnly($propertyName);
     }
 
@@ -81,52 +97,6 @@ class RegisterForm extends Component
         }
     }
 
-    private function getTermsMsg(): string {
-        switch (App::getLocale()) {
-            case 'pt':
-                return 'É necessário aceitar os Termos de Serviço para terminar o registo.';
-
-            case 'es':
-                return 'Hay que aceptar los Términos de Servicio para completar el registro.';
-
-            default:
-                return 'It\'s necessary to accept the Terms of Service to complete registration.';
-            }
-    }
-
-    private function getUnreachableEmailMsg(): string {
-        switch (App::getLocale()) {
-            case 'pt':
-                return 'O email fornecido parece não existir.';
-
-            case 'es':
-                return 'El correo electrónico proporcionado no parece existir.';
-
-            default:
-                return 'It seems that the email provided does not exist';
-        }
-    }
-
-    private function getSuccessMsg(): string {
-        switch (App::getLocale()) {
-            case 'pt':
-                return 'Registo realizado com sucesso. Logo entraremos em contato.';
-
-            case 'es':
-                return 'Registro exitoso. Nos pondremos en contacto pronto.';
-
-            default:
-                return 'Successful registration. We\'ll be in touch soon.';
-        }
-    }
-
-
-    public function reloadCaptcha()
-    {
-        $this->variavel = captcha_src('flat');
-        // $this->dispatchBrowserEvent('reloadCaptcha');
-    }
-
     private function resetForm() {
         $this->name = '';
         $this->username = '';
@@ -135,35 +105,58 @@ class RegisterForm extends Component
         $this->password_confirmation = '';
         $this->phone = '';
         $this->credit_limit = '';
+        $this->acceptedTerms = false;
+
     }
 
     public function nextStep() {
-        $this->validate([
-            'name' => 'sometimes|nullable|alpha|min:6|max:50',
-            'username' => 'required|alpha_dash|min:6|max:20',
-            'email' => 'required|email',
-            'password' => 'required|min:6|max:8|confirmed',
-        ]);
+
+        $rules = $this->rules;
+        unset($rules['phone'], $rules['credit_limit'], $rules['captcha']);
+
+        $this->validate($rules);
 
         $this->firstStep = false;
     }
 
     public function submit() {
-        if (!$this->acceptedTerms) return session()->flash('termsMsg', $this->getTermsMsg());
+        if (!$this->acceptedTerms){
+            session()->flash('termsMsg', __('É necessário aceitar os Termos de Serviço para terminar o registo.'));
+            // $this->reloadCaptcha();
+            return $this->reloadCaptcha();
+        }
 
-        $this->validate();
+        $validator = Validator::make(
+            array_merge($this->data(), ['captcha' => $this->captcha]),
+            $this->rules,
+        );
+
+        if ($validator->fails()) {
+            $this->reloadCaptcha();
+            throw new ValidationException($validator);
+        }
 
         try {
             Mail::to($this->email)->send(new RegistoMail($this->email));
         } catch (\Throwable $e) {
+            $this->reloadCaptcha();
+            $this->addError('email', __('O email fornecido parece não existir.'));
             $this->firstStep = true;
-            $this->addError('email', $this->getUnreachableEmailMsg());
             return;
         }
 
-        session()->flash('successMsg', $this->getSuccessMsg());
+        session()->flash('successMsg', __('Registo realizado com sucesso. Logo entraremos em contato.'));
 
+        $this->reloadCaptcha();
+        $this->firstStep = true;
         $this->resetForm();
+    }
+
+
+    public function reloadCaptcha()
+    {
+        $this->emit('reloadCaptcha');
+        $this->captcha = '';
     }
 
     public function render() {

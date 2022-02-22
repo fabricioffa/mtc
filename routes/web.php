@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Livewire\RegisterForm;
 use Illuminate\Support\Facades\Route;
 
 /*

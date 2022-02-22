@@ -164,5 +164,9 @@
     "Bandeira da": "Flag of",
     "Bandeira do": "Flag of",
     "Bandeira dos": "Flag of the",
-    "Emirados Árabes Unidos": "United Arab Emirates"
+    "Emirados Árabes Unidos": "United Arab Emirates",
+
+    "É necessário aceitar os Termos de Serviço para terminar o registo.": "It's necessary to accept the Terms of Service to complete registration.",
+    "O email fornecido parece não existir.": "It seems that the email provided does not exist",
+    "Registo realizado com sucesso. Logo entraremos em contato.": "Successful registration. We'll be in touch soon."
 }

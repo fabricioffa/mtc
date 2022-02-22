@@ -138,7 +138,7 @@
             <input
                 class="form-control bg-efefef border-0 rounded-03 py-2 ps-3 mt-1 @error('credit_limit') is-invalid @enderror"
                 type="number" inputmode="tel" wire:model="credit_limit" name="credit" id="register-credit" min="0"
-                max="10000000">
+                max="99999999">
         </section>
 
         @error('credit_limit')
@@ -163,21 +163,26 @@
             </div>
         @endif
 
-        <section>
-            <div class="captcha" wire:ignore>
-
-                <button wire:click="reloadCaptcha" type="button" class="btn btn-success btn-refresh">Refresh</button>
+        <section class="d-flex flex-column mt-3 pb-2">
+            <div class="captcha d-flex align-items-center mb-2" wire:ignore>
+                <img src="">
+                <i wire:click="reloadCaptcha" wire:loading.class="fa-spin" class="fas fa-sync-alt bg-secondary rounded-circle fs-5 text-white p-2 ms-3"></i>
             </div>
+            <div class="col-md col">
+                <div class="input-group-arrow-submit">
+                    <input class="form-control ps-2" wire:model="captcha" placeholder="e9uadv">
+                    <span wire:click="submit" wire:loading.class="no-action" style="cursor: pointer"
+                        class="lnr lnr-arrow-right"></span>
+                </div>
 
-            <input class="form-control ps-2 @error('captcha') is-invalid @enderror" wire:model="captcha" name="captcha"
-                placeholder="Enter captcha">
-
-            @if ($errors->has('captcha'))
-                <div class="invalid-feedback d-block">{{ $errors->first('captcha') }}</div>
-            @endif
+                @error('captcha')
+                    <div class="alert alert-danger mt-1 py-2">{{ $message }}</div>
+                @enderror
+            </div>
         </section>
 
-        <button class="d-block bg-secondary rounded-4 border-0 font-archivo fs-15 text-white mx-auto py-2 px-5 mt-5"
+
+        <button class="d-block bg-secondary rounded-4 border-0 font-archivo fs-15 text-white mx-auto py-2 px-5 mt-4 mb-5"
             type="submit">{{ __('Criar conta') }}</button>
 
     </fieldset>

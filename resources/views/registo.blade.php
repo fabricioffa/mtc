@@ -1,13 +1,10 @@
 @extends('layouts.master')
 
-@section('title') {{__('Criar Conta')}} @endsection
-
-@push('stylesheet')
-    @livewireStyles
-@endpush
+@section('title')
+    {{ __('Criar Conta') }}
+@endsection
 
 @section('content')
-
     <div class="register d-flex font-space-grotesk text-2b2d42 min-vh-100">
         <aside class="col-3 d-none d-lg-block bg-primary">
             <a href="{{ route('homepage') }}"><img class="ps-5 ms-4 pt-5 mt-2"
@@ -23,27 +20,22 @@
             <nav class="fs-16 position-absolute" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active text-end "><a class="fs-15"
-                            href="{{ route('homepage') }}">{{__('Voltar para a página inicial')}}</a>
+                            href="{{ route('homepage') }}">{{ __('Voltar para a página inicial') }}</a>
                     </li>
                 </ol>
             </nav>
 
-            <div class="max-form-width mt-6 pt-5 pb-5 pb-lg-0">
+            <div class="max-form-width mt-6 pt-3 pb-5 pb-lg-0">
                 <header class="text-start text-sm-center">
-                    <h1 class="fs-36-40 fw-bold">{{__('Criar Conta')}}</h1>
-                    <p class="fw-500">{{__('Crie uma conta para usufruir do nosso serviço')}}</p>
+                    <h1 class="fs-36-40 fw-bold">{{ __('Criar Conta') }}</h1>
+                    <p class="fw-500">{{ __('Crie uma conta para usufruir do nosso serviço') }}</p>
                 </header>
 
                 <livewire:register-form />
-
+                <livewire:captcha />
             </div>
 
         </section>
 
     </div>
-
 @endsection
-
-@push('javascript')
-    @livewireScripts
-@endpush

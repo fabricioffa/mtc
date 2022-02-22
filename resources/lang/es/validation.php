@@ -30,6 +30,7 @@ return [
         'string'  => ':attribute tiene que tener entre :min - :max caracteres.',
     ],
     'boolean'              => 'El campo :attribute debe tener un valor verdadero o falso.',
+    'captcha' => 'Captcha incorrecto. Por favor inténtelo de nuevo',
     'confirmed'            => 'La confirmación de :attribute no coincide.',
     'current_password'     => 'La contraseña es incorrecta.',
     'date'                 => ':attribute no es una fecha válida.',
