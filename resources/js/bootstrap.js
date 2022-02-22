@@ -8,7 +8,7 @@ window._ = require('lodash');
 
 window.axios = require('axios');
 
-window.jQuery = window.$ = require('jquery');
+// window.jQuery = window.$ = require('jquery');
 
 require('bootstrap5');
 

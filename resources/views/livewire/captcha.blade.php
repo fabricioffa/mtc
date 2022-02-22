@@ -3,19 +3,17 @@
 
     <script>
 
-        document.addEventListener('livewire:load', function () {
+        const setImgSrc = () => {
+            document.querySelector('.captcha img')
+                .setAttribute('src', document.querySelector('#captcha_src').innerText );
+        };
 
-            let component = @this;
-            console.log('livewire:load');
-
-            $('.captcha img').attr("src", $('#captcha_src').html());
-
-            window.addEventListener('reloadCaptcha', event => {
-                $('.captcha img').attr("src", $('#captcha_src').html());
-            });
-
-        })
+        document.addEventListener('livewire:load', function reloadCaptcha () {
+            setImgSrc();
+            window.addEventListener('reloadCaptcha', setImgSrc);
+        });
 
     </script>
 
 </div>
+

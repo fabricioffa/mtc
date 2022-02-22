@@ -28,7 +28,6 @@ class RegisterForm extends Component
 
     public $captcha;
 
-
     protected $rules = [
         'name' => 'sometimes|nullable|alpha|min:2|max:50',
         'username' => 'required|alpha_dash|min:6|max:20',
