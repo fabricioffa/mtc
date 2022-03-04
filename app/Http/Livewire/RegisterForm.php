@@ -104,6 +104,7 @@ class RegisterForm extends Component
             $this->reloadCaptcha();
             $this->addError('email', __('O email fornecido parece não existir.'));
             $this->firstStep = true;
+            report($e);
             return;
         }
 
