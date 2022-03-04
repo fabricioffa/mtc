@@ -152,7 +152,7 @@
         </section>
 
         <section class="d-flex align-items-center mt-3 pb-2">
-            <input class="me-2 custom-checkbox" wire:click="$set('acceptedTerms', true)" type="checkbox" name="terms"
+            <input class="me-2 custom-checkbox" wire:click="$toggle('acceptedTerms')" type="checkbox" name="terms"
                 id="register-terms">
             <label for="register-terms">{{ __('Li e concordo com os termos de Termos de Serviço') }}</label>
         </section>
