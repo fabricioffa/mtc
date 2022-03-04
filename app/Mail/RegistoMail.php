@@ -11,14 +11,14 @@ class RegistoMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $email;
+    private string $email;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($email)
+    public function __construct(string $email)
     {
         $this->email = $email;
     }

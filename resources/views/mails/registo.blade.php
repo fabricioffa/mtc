@@ -1,7 +1,7 @@
 @component('mail::message')
-# {{__('Bem-vindo!')}}
+# {{__('Obrigado')}}!
 
-{{__('Visite nosso espaço cliente e confira nossos serviços.')}}
+{{__('Em breve um dos nosso comerciais entrará em contato.')}}
 
 @component('mail::button', ['url' => 'https://sms.mytelecom.pt/', 'color' => 'primary'])
 {{__('Espaço cliente')}}

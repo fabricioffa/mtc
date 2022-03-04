@@ -91,9 +91,6 @@
             <button wire:click="nextStep"
                 class="d-block bg-secondary rounded-4 border-0 font-archivo fs-15 text-white mx-auto py-2 px-5"
                 type="button">{{ __('Continuar') }}</button>
-            <p class="my-4 between-lines position-relative">Ou</p>
-            <a class="bg-white google-logo position-relative border border-color-ef fs-15 fw-500 test-2b2d42 text-decoration-none text-nowrap py-2 px-5"
-                href="/auth/redirect" role="button">Criar conta com o google</a>
         </section>
     </fieldset>
 
@@ -137,19 +134,13 @@
             <label class="fs-16" for="register-credit">{{ __('Limite de crédito') }}</label>
             <input
                 class="form-control bg-efefef border-0 rounded-03 py-2 ps-3 mt-1 @error('credit_limit') is-invalid @enderror"
-                type="number" inputmode="tel" wire:model="credit_limit" name="credit" id="register-credit" min="0"
+                type="number" inputmode="tel" wire:model="credit_limit" name="credit" id="register-credit" step="0.01" min="0"
                 max="99999999">
         </section>
 
         @error('credit_limit')
             <div class="alert alert-danger mt-1 py-2">{{ $message }}</div>
         @enderror
-
-        <section class="form-check form-switch d-flex align-items-center mt-3 ps-0">
-            <input class="form-check-input custom-register-switch border-0 order-2 mt-0" type="checkbox"
-                wire:model="state" name="state" id="register-state">
-            <label class="form-check-label me-5" for="register-state">{{ __('Estado - Inativo') }}</label>
-        </section>
 
         <section class="d-flex align-items-center mt-3 pb-2">
             <input class="me-2 custom-checkbox" wire:click="$toggle('acceptedTerms')" type="checkbox" name="terms"
@@ -170,7 +161,7 @@
             </div>
             <div class="col-md col">
                 <div class="input-group-arrow-submit">
-                    <input class="form-control ps-2" wire:model="captcha" placeholder="e9uadv">
+                    <input class="form-control text-uppercase ps-2" wire:model="captcha" placeholder="E9UADV">
                     <span wire:click="submit" wire:loading.class="no-action" style="cursor: pointer"
                         class="lnr lnr-arrow-right"></span>
                 </div>

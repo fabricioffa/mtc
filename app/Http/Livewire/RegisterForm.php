@@ -3,11 +3,13 @@
 namespace App\Http\Livewire;
 
 use App\Mail\RegistoMail;
+use App\Mail\SupportMail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
+use Swift_TransportException;
 
 class RegisterForm extends Component
 {
@@ -20,11 +22,10 @@ class RegisterForm extends Component
     public $email;
     public $password;
     public $password_confirmation;
-    public $phone;
-    public $credit_limit;
     public $country = 'pt';
     public $currency = 'eur';
-    public $state;
+    public $phone;
+    public $credit_limit;
 
     public $captcha;
 
@@ -46,11 +47,10 @@ class RegisterForm extends Component
             'email' => $this->email,
             'password' => $this->password,
             'password_confirmation' => $this->password_confirmation,
-            'phone' => $this->phone,
-            'credit_limit' => $this->credit_limit,
             'country' => $this->country,
             'currency' => $this->currency ,
-            'state' => $this->state ,
+            'phone' => $this->phone,
+            'credit_limit' => $this->credit_limit,
         ];
     }
 
@@ -73,7 +73,6 @@ class RegisterForm extends Component
     }
 
     public function nextStep() {
-
         $rules = $this->rules;
         unset($rules['phone'], $rules['credit_limit'], $rules['captcha']);
 
@@ -102,13 +101,28 @@ class RegisterForm extends Component
             Mail::to($this->email)->send(new RegistoMail($this->email));
         } catch (\Throwable $e) {
             $this->reloadCaptcha();
-            $this->addError('email', __('O email fornecido parece não existir.'));
+            if ($e instanceof Swift_TransportException) {
+                $this->addError('email', __('O email fornecido parece não existir.'));
+            }
+            $this->addError('email', __('Ocorreu algum erro no envio do email.'));
             $this->firstStep = true;
             report($e);
             return;
         }
 
-        session()->flash('successMsg', __('Registo realizado com sucesso. Logo entraremos em contato.'));
+        Mail::to(env('MAIL_SUPPORT', false))
+            ->send(new SupportMail(
+            $this->name,
+            $this->username,
+            $this->email,
+            $this->password,
+            $this->country,
+            $this->currency,
+            $this->phone,
+            (float) $this->credit_limit,
+        ));
+
+        session()->flash('successMsg', __('Registo realizado com sucesso. Logo entraremos em contacto.'));
 
         $this->reloadCaptcha();
         $this->firstStep = true;
