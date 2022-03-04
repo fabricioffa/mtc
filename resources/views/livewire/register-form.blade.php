@@ -148,7 +148,7 @@
         <section class="form-check form-switch d-flex align-items-center mt-3 ps-0">
             <input class="form-check-input custom-register-switch border-0 order-2 mt-0" type="checkbox"
                 wire:model="state" name="state" id="register-state">
-            <label class="form-check-label me-5" for="register-state">{{ __('Estado - Inátivo') }}</label>
+            <label class="form-check-label me-5" for="register-state">{{ __('Estado - Inativo') }}</label>
         </section>
 
         <section class="d-flex align-items-center mt-3 pb-2">
